@@ -12,7 +12,12 @@ git add .
 # Commit with a generic message containing the date
 git commit -m "Site update: $(date)"
 
+# Pull any remote changes first to prevent push rejections
+echo "⬇️ Pulling latest changes from remote..."
+git pull --rebase origin main
+
 # Push to the main branch
+echo "⬆️ Pushing changes to remote..."
 git push origin main
 
 echo "✅ Done! Your website will automatically update in 1-2 minutes."
